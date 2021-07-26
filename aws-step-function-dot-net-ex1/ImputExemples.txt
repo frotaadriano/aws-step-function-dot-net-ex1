@@ -1,0 +1,31 @@
+﻿
+
+================
+|  stack 1:  |
+================
+step-function-exe1-stack
+
+================
+|  Exemple 1:  |
+================
+(ok)JSON
+{  "User":{		"ID":1,		"Name": "Adriano",		"Balance": 0,		Email: "adriano@xpto.ti-life"	},  "Stock":{	  "Name": "BIDI4",	  "Price": 26,	  "Quantity": 10  }}
+
+
+
+================
+|  Exemple 2:  |
+================
+{
+  \"User\":{
+		\"ID\":1,
+		\"Name\": \"Adriano\",
+		\"Balance\": null,
+		Email: \"adriano@xpto.ti-life\"
+	},
+  \"Stock\":{
+	  \"Name\": \"BIDI4\",
+	  \"Price\": 26,
+	  \"Quantity\": 10
+  }
+}

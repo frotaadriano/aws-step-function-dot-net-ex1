@@ -1,0 +1,37 @@
+{
+  "Comment": "State Machine",
+  "StartAt": "BuyStocksFillData",
+  "States": {
+    "BuyStocksFillData": {
+      "Type": "Task",
+      "Resource": "${BuyStocksFillData.Arn}",
+      "Next": "Validations"
+    },
+    "Validations": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.FailureMessages.Messages[0]",
+          "IsPresent": true,
+          "Next": "FailueOperation"
+        }
+      ],
+      "Default": "ProceedToBuy"
+    },
+    "FailueOperation": {
+      "Type": "Task",
+      "Resource": "${FailueOperation.Arn}",
+      "End": true
+    },
+    "ProceedToBuy": {
+      "Type": "Task",
+      "Resource": "${ProceedToBuy.Arn}",
+      "Next": "SendConfirmation"
+    },
+    "SendConfirmation": {
+      "Type": "Task",
+      "Resource": "${SendConfirmation.Arn}",
+      "End": true
+    }
+  }
+}
